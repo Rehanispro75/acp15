@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class with Static Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Class Inheritance and Static Methods</h1>
+    <div id="output"></div>
+
+    <script>
+        // Base class with static methods
+        class BaseClass {
+            static property = "I am a static property of BaseClass";
+
+            static displayProperty() {
+                return `Static Method: ${this.property}`;
+            }
+        }
+
+        // Subclass inheriting BaseClass
+        class SubClass extends BaseClass {
+            static anotherProperty = "I am another static property of SubClass";
+
+            static displayAnotherProperty() {
+                return `Static Method in SubClass: ${this.anotherProperty}`;
+            }
+        }
+
+        // Accessing and displaying properties using static methods
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+            <p>${BaseClass.displayProperty()}</p>
+            <p>${SubClass.displayProperty()}</p>
+            <p>${SubClass.displayAnotherProperty()}</p>
+        `;
+    </script>
+</body>
+</html>
